@@ -1,0 +1,22 @@
+\documentclass{article}
+\usepackage{fontspec}
+\usepackage[backend=biber]{biblatex}
+\setmainfont{Open Sans}
+
+\addbibresource{bibliography/references.bib}
+
+
+
+\title{My first document}
+\author{Alexej Bormatenkow}
+\date{\today}
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+\input{sections/introduction}
+
+
+\printbibliography
+\end{document}
