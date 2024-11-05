@@ -1,0 +1,30 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\babel@toc {ngerman}{}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {1}Einleitung und Motivation}{1}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {2}Kollaborative Software}{2}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.1}Local-first Software}{2}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.2}Datenreplikation im Netzwerk}{2}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.1}Replikationsstrategien}{2}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.2}Replikationsmodelle}{2}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.3}Operational Transformation (OT)}{2}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.4}Vector Clocks}{2}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.5}Conflict-free Replicated Data Types (CRDTs)}{2}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\nonumberline State-based CRDTs}{2}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\nonumberline Operation-based CRDTs}{2}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.6}Datenreplikation in verteilten Systemen}{2}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\nonumberline Quellenverzeichnis}{3}{}%
+\defcounter {refsection}{0}\relax 
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

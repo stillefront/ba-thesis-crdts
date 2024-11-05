@@ -1,22 +1,198 @@
-\documentclass{article}
-\usepackage{fontspec}
+% MAIN STUFF
+\documentclass[oneside,bibliography=totocnumbered,BCOR=5mm]{scrbook}
+\usepackage{amsmath, amsthm, amssymb}
+\usepackage[ngerman]{babel}
+\usepackage{graphics}
+\usepackage{csquotes}
+\usepackage{setspace}
+
+% BIBLIOGRAPHY
 \usepackage[backend=biber]{biblatex}
-\setmainfont{Open Sans}
-
 \addbibresource{bibliography/references.bib}
+\usepackage{titling} % customize title page
+\usepackage[hmarginratio=1:1,top=32mm,columnsep=20pt]{geometry} 
+\usepackage[hang, small,labelfont=bf,up,textfont=it,up]{caption} 
+\usepackage{booktabs} 
+\usepackage{lettrine} 
+\usepackage{enumitem}
+\setlist[itemize]{noitemsep}
+
+% LISTINGS
+
+\usepackage{listings}
+\usepackage{color}
+
+
+\lstdefinelanguage[ECMAScript2015]{JavaScript}[]{JavaScript}{
+  morekeywords=[1]{await, async, case, catch, class, const, default, do,
+    enum, export, extends, finally, from, implements, import, instanceof,
+    let, static, super, switch, throw, try},
+  morestring=[b]` % Interpolation strings.
+}
+
+
+\lstdefinelanguage{JavaScript}{
+  morekeywords=[1]{break, continue, delete, else, for, function, if, in, let,
+    new, return, this, typeof, var, void, while, with},
+  % Literals, primitive types, and reference types.
+  morekeywords=[2]{false, null, true, boolean, number, undefined,
+    Array, Boolean, Date, Math, Number, String, Object},
+  % Built-ins.
+  morekeywords=[3]{eval, parseInt, parseFloat, escape, unescape},
+  sensitive,
+  morecomment=[s]{/*}{*/},
+  morecomment=[l]//,
+  morecomment=[s]{/**}{*/}, % JavaDoc style comments
+  morestring=[b]',
+  morestring=[b]"
+}[keywords, comments, strings]
+
+\lstalias[]{ES6}[ECMAScript2015]{JavaScript}
 
 
 
-\title{My first document}
-\author{Alexej Bormatenkow}
-\date{\today}
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ 
+  backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}; should come as last argument
+  basicstyle=\ttfamily,        % the size of the fonts that are used for the code
+  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                 % sets automatic line breaking
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  deletekeywords={...},            % if you want to delete keywords from the given language
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+  firstnumber=1,                % start line enumeration with line 1000
+  frame=single,	                   % adds a frame around the code
+  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  keywordstyle=\color{blue},       % keyword style
+  language=ES6,         % the language of the code
+  morekeywords={*,...},            % if you want to add more keywords to the set
+  numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+  numbersep=5pt,                   % how far the line-numbers are from the code
+  numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
+  rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,          % underline spaces within strings only
+  showtabs=false,                  % show tabs within strings adding particular underscores
+  stepnumber=1,                    % the step between two line-numbers. If it's 1, each line will be numbered
+  stringstyle=\color{mymauve},     % string literal style
+  tabsize=2,	                   % sets default tabsize to 2 spaces
+  title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
+}
+
+
 \begin{document}
+\begin{titlepage}
+\begin{center}
+\includegraphics{HTW_Berlin_Logo_farbig.jpg}
+\linebreak[4]
+\linebreak[4]
+\linebreak[4]
+\linebreak[4]
+\textit{\large Prototypische Entwicklung eines kollaborativen und dezentralisierten Vektorzeichenprogram auf Basis von Conflict-free Replicated Data Types (CRDTs)}
+\linebreak[4]
+\linebreak[4]
+\linebreak[4]
+Abschlussarbeit 
+\linebreak[4]
+\linebreak[4]
+zur Erlangung des akademischen Grades 
+\linebreak[4]
+\linebreak[4]
+\textbf{Bachelor of Science (B.Sc.)}
+\linebreak[4]
+\linebreak[4]
+an der
+\linebreak[4]
+\linebreak[4]
+Hochschule für Technik und Wirtschaft (HTW) Berlin
+\linebreak[4]
+Fachbereich 4: Informatik, Kommunikation und Wirtschaft
+\linebreak[4]
+Studiengang \textit{Internationale Medieninformatik}
+\linebreak[4]
+\linebreak[4]
+\linebreak[4]
+1. Gutachter: Prof. Dr. Gefei Zhang\linebreak[4]
+2. Gutachter: Prof. Dr. Klaus Jung\linebreak[4]
+\linebreak[4]
+\linebreak[4]
+\linebreak[4]
+\linebreak[4]
+Eingereicht von Alexej Bormatenkow 570108
+\linebreak[4]
+\linebreak[4]
+\linebreak[4]
+\linebreak[4]
+\date{\today}
 
-\maketitle
 
-\section{Introduction}
+\end{center}
+\end{titlepage}
+\newpage
+\thispagestyle{empty}
+\newpage
+\thispagestyle{empty}       % keine Seitennummer
+\section*{Zusammenfassung}
+[Text der Zusammenfassung]
+
+
+\clearpage
+%Seite 1
+\pagenumbering{roman}% Seitennummerierung "roemisch"
+%\setcounter{page}{1} 
+
+\tableofcontents
+.
+
+\newpage
+\pagenumbering{arabic}
+
+\chapter{Einleitung und Motivation}
 \input{sections/introduction}
 
+\newpage
+\chapter{Kollaborative Software}
+\input{sections/collaborative_software}
 
-\printbibliography
+\section{Local-first Software}
+\input{sections/local_first_software}
+
+
+
+\section{Datenreplikation im Netzwerk}
+\input{sections/data_replication}
+
+\subsection{Replikationsstrategien}
+\input{sections/replication_strategies}
+
+\subsection{Replikationsmodelle}
+\input{sections/replication_models}
+
+\subsection{Operational Transformation (OT)}
+\input{sections/operational_transformation}
+\subsection{Vector Clocks}
+\input{sections/vector_clocks}
+
+
+\subsection{Conflict-free Replicated Data Types (CRDTs)}
+\input{sections/crdts}
+\subsubsection{State-based CRDTs}
+\input{sections/state_based_crdts}
+\subsubsection{Operation-based CRDTs}
+\input{sections/operation_based_crdts}
+
+\subsection{Datenreplikation in verteilten Systemen}
+\input{sections/data_replication_distributed_systems}
+
+
+
+\printbibliography[
+heading=bibintoc,
+title={Quellenverzeichnis}
+]
 \end{document}
